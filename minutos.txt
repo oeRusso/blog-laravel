@@ -1,0 +1,15 @@
+# TODO: Cómo agregar y actualizar registros desde un formulario  min 0
+
+# FIXME:
+
+
+
+
+
+
+
+
+
+
+
+# Aclracion: hasta ahora me queda claro q con las factorys establecemos las reglas para insertar datos al modelo y luego en los seeders instanciamos la clase y introducimos a la base de datos los datos que previamente establecimos en los factorys... pd:El nombre del modelo tiene q ser igual al que le pones a las clases de factory y seeder, por ejemplo si tenes un modelo llamo cursos al factorory u al seeder ponete cursosfactory o curso seeder con la s al final para que te tome y se asocie a la clase
