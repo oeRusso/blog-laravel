@@ -1,6 +1,6 @@
-# TODO: Cómo agregar y actualizar registros desde un formulario  min 0
+# TODO: Cómo agregar y actualizar registros desde un formulario  min 5
 
-# FIXME:
+# FIXME:cambiar todas las rutas a como tiene en el tutorial
 
 
 

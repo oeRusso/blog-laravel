@@ -18,13 +18,23 @@ use App\Http\Controllers\HomeController;
 
 Route::get('/', HomeController::class);
 
-Route::controller(CursoController::class)->group(function () {
-    Route::get('cursos','index')->name('cursos.index');
+Route::get('cursos', [CursoController::class, 'index']);
 
-    Route::get('cursos/create', 'create')->name('cursos.create');
 
-    Route::get('cursos/{id} ','show')->name('cursos.show');
-});
+
+
+/*================================================================================================
+Esta manera es correcta cuando trabajamos con muchas rutas para un solo controlador, pero lo voy a
+hacer como lo hace el tutorial
+================================================================================================*/
+
+// Route::controller(CursoController::class)->group(function () {
+//     Route::get('cursos','index')->name('cursos.index');
+
+//     Route::get('cursos/create', 'create')->name('cursos.create');
+
+//     Route::get('cursos/{id}','show')->name('cursos.show');
+// });
 
 
 
