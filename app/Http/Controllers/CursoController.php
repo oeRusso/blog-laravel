@@ -15,12 +15,24 @@ class CursoController extends Controller
         $cursos = Cursos::paginate();
 
 
-        return view('cursos.index',compact('cursos')); //dentro de compact le paso la variable de arriba sin el sombolo de dolar, y con esta funcion compact me permite usar esas variable que le pase en la vista
+        return view('cursos.index',compact('cursos')); //dentro de compact le paso la variable de arriba sin el simbolo de dolar, y con esta funcion compact me permite usar esas variable que le pase en la vista
     }
 
     public function create(){
 
         return view('cursos.create');
+    }
+
+    public function store(Request $request){
+        $cursos = new Cursos();
+
+
+        $cursos->name = $request->name;
+        $cursos->descripcion = $request->descripcion;
+        $cursos->categoria = $request->categoria;
+
+        $cursos->save();
+
     }
 
     public function show($id){

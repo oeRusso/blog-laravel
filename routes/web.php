@@ -18,7 +18,14 @@ use App\Http\Controllers\HomeController;
 
 Route::get('/', HomeController::class);
 
-Route::get('cursos', [CursoController::class, 'index']);
+Route::get('cursos', [CursoController::class, 'index'])->name('cursos.index');
+
+Route::get('cursos/create', [CursoController::class, 'create'])->name('cursos.create');
+
+Route::post('cursos', [CursoController::class, 'store'])->name('cursos.store'); //para guardar
+
+Route::get('cursos/{id}', [CursoController::class, 'show'])->name('cursos.show');
+
 
 
 
