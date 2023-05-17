@@ -12,7 +12,7 @@ class CursoController extends Controller
     public function index(){
 
 
-        $cursos = Cursos::paginate();
+        $cursos = Cursos::orderby('id','desc')->paginate();
 
 
         return view('cursos.index',compact('cursos')); //dentro de compact le paso la variable de arriba sin el simbolo de dolar, y con esta funcion compact me permite usar esas variable que le pase en la vista
@@ -32,6 +32,7 @@ class CursoController extends Controller
         $cursos->categoria = $request->categoria;
 
         $cursos->save();
+        return redirect()->route('cursos.show', $cursos);
 
     }
 
