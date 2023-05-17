@@ -41,7 +41,12 @@ class CursoController extends Controller
 
         return view('cursos.show',compact('curso')); //compact sirve cuando coincide el nombre de la variable del metodo con el nombre q va recibir la vista
 
-        // return view('cursos.show',['curso'=>$curso]);
+    }
+
+    public function edit($id){
+
+        return "aca se editan los cursos";
+
     }
 }
 
