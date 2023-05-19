@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Cursos;
 use Illuminate\Http\Request;
+use PhpParser\Node\Stmt\Return_;
 use SebastianBergmann\CodeCoverage\Report\Html\CustomCssFile;
 
 class CursoController extends Controller
@@ -43,9 +44,9 @@ class CursoController extends Controller
 
     }
 
-    public function edit($id){
+    public function edit(Cursos $cursos){
 
-        return "aca se editan los cursos";
+        return $cursos;
 
     }
 }
