@@ -1,6 +1,6 @@
-# TODO: Cómo agregar y actualizar registros desde un formulario  min 16.20
+# TODO: Cómo como validar formularios en laravel min 12
 
-# FIXME:cambiar todas las rutas a como tiene en el tutorial
+# FIXME:
 
 
 

@@ -25,6 +25,14 @@ class CursoController extends Controller
     }
 
     public function store(Request $request){
+
+        $request->validate([
+            'name' => 'required',
+            'descripcion' => 'required',
+            'categoria' => 'required',
+
+        ]);
+
         $cursos = new Cursos();
 
 
@@ -37,8 +45,8 @@ class CursoController extends Controller
 
     }
 
-    public function show($id){
-        $curso = Cursos::find($id);
+    public function show($cursos){
+        $curso = Cursos::find($cursos);
 
         return view('cursos.show',compact('curso')); //compact sirve cuando coincide el nombre de la variable del metodo con el nombre q va recibir la vista
 
@@ -46,7 +54,19 @@ class CursoController extends Controller
 
     public function edit(Cursos $cursos){
 
-        return $cursos;
+        return view('cursos.edit',compact('cursos'));
+
+    }
+
+    public function update(Request $request,Cursos $cursos){
+        $cursos->name = $request->name;
+        $cursos->descripcion = $request->descripcion;
+        $cursos->categoria = $request->categoria;
+
+
+        $cursos->save();
+        return redirect()->route('cursos.show', $cursos);
+
 
     }
 }
