@@ -1,4 +1,4 @@
-# TODO: Cómo como validar formularios en laravel min 12
+# TODO: que es asignacion masiva? min 0
 
 # FIXME:
 

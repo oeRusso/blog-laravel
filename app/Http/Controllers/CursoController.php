@@ -6,6 +6,7 @@ use App\Models\Cursos;
 use Illuminate\Http\Request;
 use PhpParser\Node\Stmt\Return_;
 use SebastianBergmann\CodeCoverage\Report\Html\CustomCssFile;
+use App\Http\Requests\StoreCurso;
 
 class CursoController extends Controller
 {
@@ -24,18 +25,9 @@ class CursoController extends Controller
         return view('cursos.create');
     }
 
-    public function store(Request $request){
-
-        $request->validate([
-            'name' => 'required',
-            'descripcion' => 'required',
-            'categoria' => 'required',
-
-        ]);
+    public function store(StoreCurso $request){
 
         $cursos = new Cursos();
-
-
         $cursos->name = $request->name;
         $cursos->descripcion = $request->descripcion;
         $cursos->categoria = $request->categoria;
@@ -59,6 +51,13 @@ class CursoController extends Controller
     }
 
     public function update(Request $request,Cursos $cursos){
+
+        $request->validate([
+            'name' => 'required',
+            'descripcion' => 'required',
+            'categoria' => 'required',
+        ]);
+
         $cursos->name = $request->name;
         $cursos->descripcion = $request->descripcion;
         $cursos->categoria = $request->categoria;

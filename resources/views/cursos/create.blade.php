@@ -9,7 +9,7 @@
 
         @csrf
         <label for="name">Nombre: </label><br>
-        <input type="text" name="name">
+        <input type="text" name="name" value="{{ old('name') }}">
         @error('name')
             <br>
             <small>*{{ $message }}</small>
@@ -18,7 +18,7 @@
 
         <br>
         <label for="descripcion">Descripcion: </label><br>
-        <textarea name="descripcion"  rows="10"></textarea>
+        <textarea name="descripcion"  rows="10">{{ old('descripcion') }}</textarea>
         @error('descripcion')
             <br>
             <small>*{{ $message }}</small>
@@ -28,7 +28,7 @@
         <br>
 
         <label for="categoria">Categoria:</label><br>
-        <input type="text" name="categoria">
+        <input type="text" name="categoria" value="{{ old('categoria')}}">
         @error('categoria')
             <br>
             <small>*{{ $message }}</small>
